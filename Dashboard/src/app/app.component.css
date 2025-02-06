@@ -1,0 +1,104 @@
+/* Hover effect for the whole li element (row) */
+.nav-item {
+  transition: background-color 0.3s ease;
+}
+.icons{
+  /* width: 80%; */
+  display: flex; justify-content: flex-end; align-items: center; background-color:#ffffff; padding: 5px; border-radius: 50px;
+}
+
+.nav-item:hover {
+  background-color: #e1e1e1; /* Change to the desired hover background color */
+}
+
+/* Active menu item */
+.nav-link.active {
+
+
+  background-color: #007bff; /* Change to the active background color */
+  color: white; /* Change text color for the active item */
+}
+
+.icon-container:hover {
+    border-radius: 10%;
+    border-color: #d6e7f9;
+    width: 30px;height: 30px;
+    background-color: #ffffff;
+  }
+/* Optional: Change text color when hovering the whole row */
+.nav-item:hover .nav-link {
+  color: #333; /* Change text color on hover */
+}
+
+/* Optional: Add a transition for smooth effect */
+.nav-item, .nav-link {
+   padding: 5px;
+    height: auto;width: 230px;
+  transition: all 0.3s ease;
+}
+.icon-gif {
+    width: 24px; /* Adjust the size of the GIF */
+    height: 24px; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add spacing between the icon and the text */
+    vertical-align: middle; /* Align with the text */
+    border-radius: 50%; /* Optional: make it circular if the GIF supports it */
+  }
+  body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.search-container {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    width: 400px;
+    height: auto;
+    margin-right: 20%;
+    
+    transition: all 0.3s ease;
+}
+
+.search-container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.form-control.search-input {
+    border: none;
+    background: transparent;
+    padding-left: 20px;
+    font-size: 1rem;
+    height: 20px;
+}
+
+.form-control.search-input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-search {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.search-icon {
+    color: #6c757d;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+<div class="box col-10" style="background-color: white;margin-top: 15px;margin-left: 9px; width: 83%;">
+  <div class="box">
+      <div class="box-header d-lg-flex justify-content-between align-items-center">
+          <div>
+              <h4 class=" box1 box-title m-0 text-fade" style="color:#7e8299 !important">Hello seller!</h4>
+              <h2 class="box2 mt-4 mb-0 fw-bold">Product Analytics</h2>
+          </div>&nbsp;&nbsp;
+          <div style="align-items: end;">
+              <button type="button"  (click)="showModal = true" class="btn btn-primary btn-md waves-effect">Add Product</button>&nbsp;&nbsp;
+                              <button class="btn btn-primary btn-md waves-effect"><i class="si-plus si"></i> Update Product</button>
+          </div>
+      </div>
+  </div> </div>
+  
+  <div
+  class="modal fade"
+  [class.show]="showModal"
+  [style.display]="showModal ? 'block' : 'none'"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  (click)="onBackdropClick($event)"
+id="exampleModal"
+
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Product details</h5>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-6">
+          <label for="name" class="form-label">Product name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            [(ngModel)]="formData.name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-6">
+          <label for="price" class="form-label">Product price</label>
+          <input
+            type="text"
+            id="price"
+            class="form-control"
+            [(ngModel)]="formData.price"
+            name="price"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Product Description</label>
+          <textarea
+            class="form-control"
+            name="desc"
+            id="desc"
+            rows="3"
+            [(ngModel)]="formData.desc"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="sku" class="form-label">Product SKU</label>
+          <input
+            type="number"
+            id="sku"
+            class="form-control"
+            [(ngModel)]="formData.sku"
+            name="sku"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="brand" class="form-label">Product Brand</label>
+          <input
+            type="text"
+            id="brand"
+            class="form-control"
+            [(ngModel)]="formData.brand"
+            name="brand"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleSelect" class="form-label">Select Category</label>
+          <select class="form-select" id="exampleSelect" name="selectedOption" [(ngModel)]="formData.selectedOption" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Books">Books</option>
+            <option value="Books">Others</option>
+          </select>
+
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Product Image</label>
+          <input class="form-control" type="file" id="formFile" (change)="onFileSelect($event)" name="productImage" required>
+        </div>
+      
+      
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+        (click)="closeModal()"
+      >
+        Close
+      </button>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+        Save changes
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- new -->
+
+<div class="con-2 box">
+<div class="col-lg-5">
+  <div class="row">
+    <div class="col-6 bb-1 c1">
+      <div class="box shadow-none ps-10">
+        <div class="bg-light mb-20 w-50 h-50 rounded-circle text-center align-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+          </svg>
+        </div>
+        <div class="d-flex align-items-center">
+          <h2 class="mb-5 mt-0 fw-600 me-15">950</h2>
+          <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">5.22%</small>     </div>
+        <p class="text-mute mb-0">Total products</p>
+      </div>
+    </div>
+    <div class="col-6 bb-1 c1">
+      <div class="box shadow-none ps-10">
+        <div class="bg-light mb-20 w-50 h-50 rounded-circle text-center align-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+            <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
+            <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
+          </svg>
+        </div>
+        <div class="d-flex align-items-center">
+          <h2 class="mb-5 mt-0 fw-600 me-15">600</h2>
+          <small class="d-inline-flex px-2 py-1 fw-semibold text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-2 me-2">5.22%</small> 
+         </div>
+        <p class="text-mute mb-0">Sold products</p>
+      </div>
+    </div>
+    <div class="col-6 bb-1 c1">
+      <div class="box shadow-none ps-10">
+        <div class="bg-light mb-20 w-50 h-50 rounded-circle text-center align-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
+            <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599"/>
+          </svg>
+        </div>
+        <div class="d-flex align-items-center">
+          <h2 class="mb-5 mt-0 fw-600 me-15">30</h2>
+          <small class="d-inline-flex px-2 py-1 fw-semibold text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-2 me-2">5.22%</small>
+        </div>
+        <p class="text-mute mb-0">Top products</p>
+      </div>
+    </div>
+    <div class="col-6 bb-1 c1">
+      <div class="box shadow-none ps-10">
+        <div class="bg-light mb-20 w-50 h-50 rounded-circle text-center align-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clipboard2-data" viewBox="0 0 16 16">
+            <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z"/>
+            <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"/>
+            <path d="M10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1"/>
+          </svg>
+        </div>
+        <div class="d-flex align-items-center">
+          <h2 class="mb-5 mt-0 fw-600 me-15">500</h2>
+          <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">5.22%</small>
+        </div>
+        <p class="text-mute mb-0">Analyzed products</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

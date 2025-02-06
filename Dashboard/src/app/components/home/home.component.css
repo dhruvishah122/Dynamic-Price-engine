@@ -1,0 +1,28 @@
+.home{
+    height: 100%;
+    width: 100%;
+    background-color:#ecedee
+}
+.card-style{
+   height:153px;
+   width: 339px;
+   margin-top: 23px;
+   /* margin-left: 13px; */
+   box-sizing: border-box  ;
+   padding: auto;
+   transition: transform 0.3s ease, box-shadow 0.1s ease;
+}
+.card-style:hover {
+    transform: translateY(-10px) scale(1.05); /* Pull up and scale slightly */
+    box-shadow: 0 12px 20px rgba(151, 221, 239, 0.2); /* Deeper shadow */
+    box-sizing: border-box  ;
+  }
+.icon-style{
+  padding-top: 24px;
+}
+.cards{
+    display: flex;
+    justify-content: flex-start; /* Align cards to the left */
+    align-items: flex-start; /* Align cards vertically at the top */
+    gap: 16px; /* Space between cards */
+    flex-wrap: wrap; }
